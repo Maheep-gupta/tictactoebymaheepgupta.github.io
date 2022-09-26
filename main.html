@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- My own CSS -->
+    <link rel="stylesheet" href="mainStyle.css">
+    <title>Tic Tac Toe - by Maheep Gupta</title>
+</head>
+<body>
+    <div class="game-title">
+        <div class="title-name">
+            Tic Tac Toe
+        </div>
+        
+    </div>
+    <div class="about-players">
+        <div class="player-1 players">Player-1 :-X</div>
+        <div class="player-2 players">Player-2 :-O</div>
+    </div>
+    <div class="main-btn" id="main-menu">
+        <div id="start" class="main-btn-design">
+            Start
+        </div>
+        <div id="reset" class="main-btn-design" >
+            Reset
+        </div>
+    </div>
+    <div id="game-over" class="game-end-banner">
+        Game Over
+    </div>
+    <div id="player-1" class="game-end-banner">
+        Game Over and
+        Player 1 Win's the game
+        <div >Press <strong>Reset Button</strong> to start Again</div>
+
+    </div>
+    <div id="player-2" class="game-end-banner">
+        Game Over and
+        Player 2 Win's the game
+        <div>Press <strong>Reset Button</strong> to start Again</div>
+
+    </div>
+    <div id="game-grid">
+        <div class="I-column">
+            <div class="game-space-row-1 game-space-rows">
+                <!-- 0 -->
+                <div id="1" class="game-obj-placeable game-obj game-grid-c1 mustHaveContentForWin"><p></p></div>
+                <!-- 1 -->
+                <div id="2" class="game-obj-placeable game-obj game-grid-c1 mustHaveContentForWin"><p></p></div>
+                <!-- 2 -->
+                <div id="3" class="game-obj-placeable game-obj game-grid-c3 mustHaveContentForWin"><p></p></div>
+            </div>
+        </div>
+        <div class="II-column">
+            <div class="game-space-row-2 game-space-rows">
+                <!-- 3 -->
+                <div id="4" class="game-obj-placeable game-obj game-grid-c1 mustHaveContentForWin"><p></p></div>
+                <div id="5" class="game-obj-placeable game-obj game-grid-c1"><p></p></div>
+                <div id="6" class="game-obj-placeable game-obj game-grid-c3"><p></p></div>
+            </div>
+        </div>
+        <div class="III-column">
+            <div class="game-space-row-3 game-space-rows">
+                <!-- 4 -->
+                <div id="7" class="game-obj-placeable game-obj game-grid-c1 mustHaveContentForWin" style="border-bottom: 0;"><p></p></div>
+                <div id="8" class="game-obj-placeable game-obj game-grid-c1" style="border-bottom: 0;"><p></p></div>
+                <div id="9" class="game-obj-placeable game-obj game-grid-c3" style="border-bottom: 0;"><p></p></div>
+            </div>
+        </div>
+
+        <div id="player-chance" class="players">
+            Player 1's Turn
+        </div>
+        
+            
+    </div>
+    <script src="mainJS.js"></script>
+</body>
+</html>

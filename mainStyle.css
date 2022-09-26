@@ -1,0 +1,391 @@
+body{
+    box-sizing: border-box;
+    font-family:Helvetica, sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+}
+.game-title{
+    font-size: 4rem;
+    text-align: center;
+    position: relative;
+    top: 1.125rem;
+}
+.main-btn{
+    width: 100%;
+    position: relative;
+    top: 5rem;
+    text-align:center;
+    left: 6rem;
+    /* transform: translateX(); */
+}
+.moveLeft{
+    left: -19rem;
+}
+.main-btn-design{
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    top: 0rem;
+    background-color: #fff;
+    border: 2px solid #212121;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+#start:hover{
+    background-color: #212121;
+    color: #fff;
+}
+#reset:hover{
+    background-color: #212121;
+    color: #fff;
+}
+.about-players{
+    float: right;
+    margin-right: 35px;
+}
+.players{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#player-chance{
+    position: relative;
+    top: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#game-grid{
+    position: relative;
+    left: 38vw;
+    top: 1rem;
+    width: fit-content;
+    display: none;
+    opacity: 1;
+    /* border: 2px solid red; */
+}
+
+.game-space-rows{
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    width: 450px;
+    border: 2px solid red;
+}
+.game-space-rows div{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    
+}
+.game-obj{
+    font-size: 140px;
+    text-align: center;
+}
+.game-obj p{
+    margin: 0;
+    margin-top: 15px;
+}
+.game-grid-c1{
+    border-right: 5px solid #212121;
+    border-bottom: 5px solid #212121;
+}
+.game-grid-c3{
+    border-bottom: 5px solid #212121;
+}
+.game-end-banner div{
+    font-size: 2rem;
+    font-weight: 200;
+    margin-top: 1rem;
+}
+.game-end-banner{
+    width: fit-content;
+    text-align: center;
+    position: relative;
+    top:15rem;
+    background-color: #fff;
+    overflow: hidden;
+    left: 8rem;
+    z-index: 10;
+}
+#game-over{
+    display: none;
+    left: 34rem;
+}
+#player-1{
+    display: none;
+    font-size: 3.7rem;
+}
+#player-2{
+    display: none;
+    font-size: 3.7rem;
+    
+}
+@media only screen and (min-width: 769px) and (max-width:1024px){
+    .game-title{
+        font-size: 3rem;
+    }
+    .players{
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+    }
+    .about-players{
+        float: unset;
+        margin: 0;
+        margin-top: 2rem;
+        margin-right: 1.2rem;
+    }
+    .game-space-rows{
+        height: 16vh;
+        width: 92vw;
+    }
+    #game-grid{
+        width: 100vw;
+        top: 2rem;left: 0;
+    }
+    .main-btn-design{
+        font-size: 2rem;
+    }
+    .main-btn{
+        left: -1rem;
+        top: 0rem;
+    }
+    .main-btn div{
+        display: inline;
+        margin-left: 10px;
+    }
+    .moveLeft{
+        left: -1rem;
+        top: 0rem;
+
+    }
+    .game-obj p{
+        font-size: 10rem;
+    }
+    .game-end-banner div{
+        font-size: 1rem;
+    }
+    .game-end-banner{
+        width: 100vw;
+        font-size: 1.7rem;
+        top: 10rem;
+        left: -0.5rem;
+        /* right: 0.5rem; */
+    }
+    #player-1{
+        font-size: 1.7rem;  
+    }
+    #player-2{
+        font-size: 1.7rem;
+        
+    }
+    #game-over{
+        font-size: 4.7rem;
+        top: 18rem;
+        left: 0;
+        
+    }
+}
+@media only screen and (min-width: 476px) and (max-width:768px){
+    .game-title{
+        font-size: 3rem;
+    }
+    .players{
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+    }
+    .about-players{
+        float: unset;
+        margin: 0;
+        margin-top: 2rem;
+        margin-right: 1.2rem;
+    }
+    .game-space-rows{
+        height: 16vh;
+        width: 93vw;
+    }
+    #game-grid{
+        width: 100vw;
+        top: 2rem;left: 0;
+    }
+    .main-btn-design{
+        font-size: 2rem;
+    }
+    .main-btn{
+        left: -1rem;
+        top: 0rem;
+    }
+    .main-btn div{
+        display: inline;
+        margin-left: 10px;
+    }
+    .moveLeft{
+        left: -1rem;
+        top: 0rem;
+
+    }
+    .game-obj p{
+        font-size: 10rem;
+    }
+    .game-end-banner div{
+        font-size: 1rem;
+    }
+    .game-end-banner{
+        width: 100vw;
+        font-size: 1.7rem;
+        top: 10rem;
+        left: -0.5rem;
+        /* right: 0.5rem; */
+    }
+    #player-1{
+        font-size: 1.7rem;  
+    }
+    #player-2{
+        font-size: 1.7rem;
+        
+    }
+    #game-over{
+        font-size: 3.7rem;
+        top: 18rem;
+        left: 0;
+    }
+}
+@media only screen and (min-width: 321px) and (max-width:475px){
+    .game-title{
+        font-size: 2rem;
+    }
+    .players{
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    .about-players{
+        float: unset;
+        margin: 0;
+        margin-top: 2rem;
+        margin-right: 1.2rem;
+    }
+    .game-space-rows{
+        height: 10vh;
+        width: 93vw;
+    }
+    #game-grid{
+        width: 100vw;
+        top: 2rem;left: 0;
+        left: 0.2rem;
+    }
+    .main-btn-design{
+        font-size: 1.2rem;
+    }
+    .main-btn{
+        left: -1rem;
+        top: 0rem;
+    }
+    .main-btn div{
+        display: inline;
+        margin-left: 10px;
+    }
+    .moveLeft{
+        left: -1rem;
+        top: 0rem;
+
+    }
+    .game-obj p{
+        font-size: 4rem;
+    }
+    .game-end-banner div{
+        font-size: 1rem;
+    }
+    .game-end-banner{
+        width: 100vw;
+        font-size: 1.7rem;
+        top: 10rem;
+        left: -0.5rem;
+        /* right: 0.5rem; */
+    }
+    #player-1{
+        font-size: 1.7rem;  
+    }
+    #player-2{
+        font-size: 1.7rem;
+        
+    }
+    #game-over{
+        font-size: 2.7rem;
+        top: 13rem;
+        left: 0;
+    }
+}
+@media only screen and (max-width: 320px){
+    body{
+        font-size: 3rem;
+    }
+    .game-title{
+        font-size: 2rem;
+    }
+    .players{
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    .about-players{
+        float: unset;
+        margin: 0;
+        margin-top: 2rem;
+        margin-right: 1.2rem;
+    }
+    .game-space-rows{
+        height: 10vh;
+        width: 95vw;
+    }
+    #game-grid{
+        width: 100vw;
+        top: 2rem;left: 0;
+    }
+    .main-btn-design{
+        font-size: 1.2rem;
+    }
+    .main-btn{
+        left: -1rem;
+        top: 0rem;
+    }
+    .main-btn div{
+        display: inline;
+        margin-left: 10px;
+    }
+    .moveLeft{
+        left: -1rem;
+        top: 0rem;
+
+    }
+    .game-obj p{
+        font-size: 4rem;
+    }
+    .game-end-banner div{
+        font-size: 1rem;
+    }
+    .game-end-banner{
+        width: 100vw;
+        font-size: 1.7rem;
+        top: 10rem;
+        left: -0.5rem;
+        /* right: 0.5rem; */
+    }
+    #player-1{
+        font-size: 1.7rem;  
+    }
+    #player-2{
+        font-size: 1.7rem;
+        
+    }
+    #game-over{
+        font-size: 2.7rem;
+        top: 13rem;
+        left: 0;
+        
+    }
+
+}
