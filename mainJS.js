@@ -3,7 +3,6 @@
 var clickCounter = 0;
 var player1 = [];
 var player2 = [];
-var crossLine = document.getElementsByTagName('hr')[0];
 var playersTurn = document.getElementById('player-chance')
 var gameOver = document.getElementById('game-over')
 var player_1 = document.getElementById('player-1')
@@ -11,7 +10,6 @@ var player_2 = document.getElementById('player-2')
 
 var gameSpaces = document.querySelectorAll('.game-obj-placeable')
 function mainGame() {
-    crossLine.style.top="0"
     // winnerOfTheGame();
     document.getElementById('game-grid').style.transition = "0.5s ease-in-out";
     document.getElementById('game-grid').style.display = "block";
@@ -83,7 +81,6 @@ document.getElementById('start').addEventListener('click', () => {
 
 })
 document.getElementById('reset').addEventListener('click', () => {
-    crossLine.style.top="0"
     document.getElementById('game-grid').style.display = "block";
     // document.getElementById('start').setAttribute('disabled')
 
@@ -118,7 +115,6 @@ function winnerOfTheGameForX() {
     if (mustHaveContentToWin[0].childNodes.length != 0 && mustHaveContentToWin[0].textContent === 'X') {
         if (player1.includes('2') && player1.includes('3')) {
             player_1.style.display = "block";
-            crossLine.style.top = "8rem";
             // setInterval()
             gridDisplayNone();
         }
