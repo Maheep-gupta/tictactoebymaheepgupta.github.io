@@ -12,7 +12,7 @@ var gameSpaces = document.querySelectorAll('.game-obj-placeable')
 function mainGame() {
     // winnerOfTheGame();
     document.getElementById('game-grid').style.transition = "0.5s ease-in-out";
-    document.getElementById('game-grid').style.display = "block";
+    document.getElementById('game-grid').style.display = "flex";
     // Change this with By Adding a Class
     // document.getElementById('main-menu').style.transform="translateX(-19rem)";
     document.getElementById('main-menu').classList.add('moveLeft');
@@ -37,14 +37,13 @@ function mainGame() {
                     if (clickCounter % 2 == 0) {
                         const innerHTMLContentX = element.getElementsByTagName('p')[0].innerHTML = "X"
                         playersTurn.innerHTML = "Player 2's Turn"
-                        console.log("Player 1", clickCounter)
                         player1.push(element.getAttribute('id'))
                         setTimeout(() => {
                             winnerOfTheGameForX();
                         }, 600)
                         clickCounter++;
-                        console.log("Player1")
-                        console.log(player1)
+                        
+                      
                     }
                     // winnerOfTheGame();
                     // Player 2
@@ -55,14 +54,10 @@ function mainGame() {
                         clickCounter++; setTimeout(() => {
                             winnerOfTheGameForO();
                         }, 600)
-                        console.log("Player2")
-                        console.log(player2);
+                        
+                       
                     }
                     // winnerOfTheGame();
-                }
-                if (clickCounter === 9) {
-                    gameOver.style.transition = "0.5 ease-in-out"
-                    gameOver.style.display = "block";
                 }
             }
 
@@ -81,7 +76,8 @@ document.getElementById('start').addEventListener('click', () => {
 
 })
 document.getElementById('reset').addEventListener('click', () => {
-    document.getElementById('game-grid').style.display = "block";
+    document.getElementById('main-menu').classList.add('moveLeft');
+    document.getElementById('game-grid').style.display = "flex";
     // document.getElementById('start').setAttribute('disabled')
 
     for (let index = 0; index < gameSpaces.length; index++) {
@@ -97,8 +93,6 @@ document.getElementById('reset').addEventListener('click', () => {
     player_1.style.display = "none";
     player_2.style.display = "none";
 
-    // Making Game Over banner to go off
-    gameOver.style.display = "none";
 })
 
 function gridDisplayNone() {
@@ -107,24 +101,29 @@ function gridDisplayNone() {
 
     }, 10)
 }
+function rearrangingTheButtons(player_value) {
+    document.getElementById('main-menu').classList.remove('moveLeft');
+    player_value.style.display = "block";
+}
 function winnerOfTheGameForX() {
+    
     const mustHaveContentToWin = document.getElementsByClassName('mustHaveContentForWin');
     // For Position 1
 
 
     if (mustHaveContentToWin[0].childNodes.length != 0 && mustHaveContentToWin[0].textContent === 'X') {
         if (player1.includes('2') && player1.includes('3')) {
-            player_1.style.display = "block";
+            rearrangingTheButtons(player_1)
             // setInterval()
             gridDisplayNone();
         }
         else if (player1.includes('5') && player1.includes('9')) {
-            player_1.style.display = "block";
+            rearrangingTheButtons(player_1)
             gridDisplayNone();
 
         }
         else if (player1.includes('4') && player1.includes('7')) {
-            player_1.style.display = "block";
+            rearrangingTheButtons(player_1)
             gridDisplayNone();
 
         }
@@ -133,25 +132,25 @@ function winnerOfTheGameForX() {
     // For Position 2
     if (mustHaveContentToWin[1].childNodes.length != 0 && mustHaveContentToWin[1].textContent === 'X') {
         if (player1.includes('5') && player1.includes('8')) {
-            player_1.style.display = "block";
+            rearrangingTheButtons(player_1)
             gridDisplayNone();
         }
     }
     // For Position 3
     if (mustHaveContentToWin[2].childNodes.length != 0 && mustHaveContentToWin[2].textContent === 'X') {
         if (player1.includes('5') && player1.includes('7')) {
-            player_1.style.display = "block";
+            rearrangingTheButtons(player_1)
             gridDisplayNone();
         }
         else if (player1.includes('6') && player1.includes('9')) {
-            player_1.style.display = "block";
+            rearrangingTheButtons(player_1)
             gridDisplayNone();
         }
     }
     // For Position 4
     if (mustHaveContentToWin[3].childNodes.length != 0 && mustHaveContentToWin[3].textContent === 'X') {
         if (player1.includes('5') && player1.includes('6')) {
-            player_1.style.display = "block";
+            rearrangingTheButtons(player_1)
             gridDisplayNone();
         }
     }
@@ -159,27 +158,28 @@ function winnerOfTheGameForX() {
     // console.log(mustHaveContentToWin[6].getAttribute('id'))
     if (mustHaveContentToWin[4].childNodes.length != 0 && mustHaveContentToWin[4].textContent === 'X') {
         if (player1.includes('8') && player1.includes('9')) {
-            player_1.style.display = "block";
+            rearrangingTheButtons(player_1)
             gridDisplayNone();
         }
     }
 
 }
 function winnerOfTheGameForO() {
+
     const mustHaveContentToWin = document.getElementsByClassName('mustHaveContentForWin');
     // For Position 1
     if (mustHaveContentToWin[0].childNodes.length != 0 && mustHaveContentToWin[0].textContent === 'O') {
         if (player2.includes('2') && player2.includes('3')) {
-            player_2.style.display = "block";
+            rearrangingTheButtons(player_2)
             gridDisplayNone();
         }
         else if (player2.includes('5') && player2.includes('9')) {
-            player_2.style.display = "block";
+            rearrangingTheButtons(player_2)
             gridDisplayNone();
 
         }
         else if (player2.includes('4') && player2.includes('7')) {
-            player_2.style.display = "block";
+            rearrangingTheButtons(player_2)
             gridDisplayNone();
 
         }
@@ -188,25 +188,25 @@ function winnerOfTheGameForO() {
     // For Position 2
     if (mustHaveContentToWin[1].childNodes.length != 0 && mustHaveContentToWin[1].textContent === 'O') {
         if (player2.includes('5') && player2.includes('8')) {
-            player_2.style.display = "block";
+            rearrangingTheButtons(player_2)
             gridDisplayNone();
         }
     }
     // For Position 3
     if (mustHaveContentToWin[2].childNodes.length != 0 && mustHaveContentToWin[2].textContent === 'O') {
         if (player2.includes('5') && player2.includes('7')) {
-            player_2.style.display = "block";
+            rearrangingTheButtons(player_2)
             gridDisplayNone();
         }
         else if (player2.includes('6') && player2.includes('9')) {
-            player_2.style.display = "block";
+            rearrangingTheButtons(player_2)
             gridDisplayNone();
         }
     }
     // For Position 4
     if (mustHaveContentToWin[3].childNodes.length != 0 && mustHaveContentToWin[3].textContent === 'O') {
         if (player2.includes('5') && player2.includes('6')) {
-            player_2.style.display = "block";
+            rearrangingTheButtons(player_2)
             gridDisplayNone();
         }
     }
@@ -214,7 +214,7 @@ function winnerOfTheGameForO() {
     // console.log(mustHaveContentToWin[6].getAttribute('id'))
     if (mustHaveContentToWin[4].childNodes.length != 0 && mustHaveContentToWin[4].textContent === 'O') {
         if (player2.includes('8') && player2.includes('9')) {
-            player_2.style.display = "block";
+            rearrangingTheButtons(player_2)
             gridDisplayNone();
         }
     }
